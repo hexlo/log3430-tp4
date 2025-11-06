@@ -18,12 +18,12 @@ jobs:
 
   on_failure:
     needs: build
-    if: needs.build.result == 'failure'
+    if: failure()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Run myscript.py on failure
+      - name: Find last working commit using git bisect
         run: python myscript.py
 

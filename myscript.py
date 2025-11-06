@@ -11,3 +11,8 @@ if status != 0:
     print("Bisecting failed.")
     os.system("git bisect reset")
     exit(1)
+else:
+    print("Bisecting completed successfully.")
+    os.system("git bisect reset")
+    exit(0)
+    
